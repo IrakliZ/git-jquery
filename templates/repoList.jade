@@ -1,8 +1,19 @@
-each item in items
-    div.row 
-        div.six.columns
-            a(href="#", onClick='repoView("' + item.full_name + '")')
-                = item.full_name
-        div.six.columns
-            = item.open_issues
-            |  issues
+div.u-full-width
+    table.u-full-width
+        thead
+            tr
+                th Name
+                th Issues
+                th Forks
+                th Stars
+                th Language
+            tbody
+            each item in items
+                tr
+                    td
+                        a(href="#", onClick='repoView("' + item.full_name + '")')
+                            = item.name
+                    td= item.open_issues
+                    td= item.forks
+                    td= item.stargazers_count
+                    td= item.language
